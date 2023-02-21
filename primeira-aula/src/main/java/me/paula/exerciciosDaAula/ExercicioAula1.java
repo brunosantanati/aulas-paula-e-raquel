@@ -1,4 +1,4 @@
-package me.paula;
+package me.paula.exerciciosDaAula;
 
 import java.util.List;
 
