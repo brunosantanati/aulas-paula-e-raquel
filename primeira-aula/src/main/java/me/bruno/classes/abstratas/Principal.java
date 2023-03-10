@@ -11,10 +11,11 @@ public class Principal {
         onibus.fazerAlgoDiferente();
 
         System.out.println("########## Carro ##########");
-        Veiculo carro = new CarroDePasseio();
+        CarroDePasseio carro = new CarroDePasseio();
         carro.acelerar();
         carro.freiar();
         carro.fazerAlgoDiferente();
+        System.out.println("é automático:" + carro.isAutomatico());
     }
 
 }
