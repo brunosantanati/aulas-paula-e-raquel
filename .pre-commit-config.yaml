@@ -1,21 +1,11 @@
-# See https://pre-commit.com for more information
-# See https://pre-commit.com/hooks.html for more hooks
 repos:
--   repo: https://github.com/pre-commit/pre-commit-hooks
-    rev: v3.2.0
+  - repo: https://github.com/pre-commit/mirrors-prettier
+    rev: v2.7.1
     hooks:
-      - id: checkstyle
-        args:
-          - --config=/path/to/checkstyle.xml
-      - id: spotbugs
-        args:
-          - --max_heap_size=512m
-          - --spotbugs-xml
-      - id: junit-test-discovery
-        args:
-          - --pattern=**/*Test.java
-      - id: black
-        name: black-formatting
-        language_version: python3.9
-        entry: black
-        files: \.(java)$
+      - id: prettier
+        additional_dependencies:
+        -   prettier@2.7.1
+        -   prettier-plugin-java@2.1.0
+        args: ["--write"]
+        files: \.java$
+
