@@ -1,6 +1,8 @@
 package me.paula.exerciciosDeCasa;
 
 import java.math.BigDecimal;
+import java.util.Map;
+
 public class HQ {
     private String nome;
     private BigDecimal preco;
@@ -27,6 +29,18 @@ public class HQ {
     public void setISBN(String ISBN) {
         this.ISBN = ISBN;
     }
+
+    public void consumirPaniniService(String IsbnHQ) {
+		
+		PaniniService service = new PaniniService();
+		Map<String, String> dadosHQ = service.getDadosHQByIsbn(IsbnHQ);
+		
+		this.nome = dadosHQ.get("nome");
+		this.preco = new BigDecimal(dadosHQ.get("preco"));
+		this.roteirista = dadosHQ.get("roteirista");
+		this.artista = dadosHQ.get("artista");
+		this.ISBN = dadosHQ.get("ISBN");
+	}
 
     @Override
     public String toString() {
